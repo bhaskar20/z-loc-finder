@@ -1,9 +1,20 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+<div>
+  <div class="zheader">
+    Z Restro Locator
+  </div>
+  <div>
+    <div class="zsearch">
+      <form class="form-wrapper cf">
+          <input type="text" ng-model="searchText" placeholder="Search here..." required>
+          <button ng-click="search()">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="zmap-container">
+    <div class="zmap">
+    <ng-map zoom="4" center="[19.39,73.47]" scrollwheel="false" zoom-to-include-markers="auto" on-click="changeUserRestPos()">
+    </ng-map>
+    </div>
+    <div class="zrestrolist"></div>
+  </div>
 </div>

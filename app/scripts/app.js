@@ -1,13 +1,21 @@
 'use strict';
 
-angular.module('myApp', [])
-  .config(function ($routeProvider) {
+angular.module('myApp', [
+  'ui.bootstrap',
+  'ngCookies',
+  'ngResource',
+  'ngSanitize',
+  'ngRoute',
+  'ngAnimate',
+  'ngMap'
+])
+  .config(["$routeProvider",function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'mainCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }]);
