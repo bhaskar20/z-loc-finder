@@ -1,8 +1,41 @@
-<div class="container">
-    <div class="zheader-link">
-    <a ng-href="{{info.url}}" target="_blank" >{{info.name}}</a>
-    </div>
-    <div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="zheader-link">
+            <a ng-href="{{info.url}}" target="_blank">{{info.name}}</a>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 row-padding">
+            <div class="z-pic">
+                <a ng-href="{{info.photos_url}}" target="_blank">
+                    <img class="img-responsive" ng-src="{{info.featured_image}}">
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 row-padding">
+            <div class="z-box">
+                <div class="text-center text-success" style="font-size:18px; font-weight:400">
+                    Details
+                </div>
+                <div>
+                    {{info.user_rating.aggregate_rating}} {{info.user_rating.votes}} votes
+                </div>
+                <div>
+                    {{info.cuisines}}
+                </div>
+                <div>
+                    {{info.average_cost_for_two}}Rs. for two(( {{info.price_range}}/5))
+                </div>
+                <div class="z-address">
+                    {{info.location.address}}
+                </div>
+                <div ng-if="info.has_online_delivery == 0 && info.is_delivering_now==0 ">
+                    <div class="btn btn-primary btn-block" ng-click="orderNow(info.book_url)">Order Now
+                    </div>
+                </div>
+                <div ng-if="info.has_online_delivery == 1 || info.is_delivering_now==1">
+                    <div class="btn btn-primary btn-block disabled">No Online Order
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-

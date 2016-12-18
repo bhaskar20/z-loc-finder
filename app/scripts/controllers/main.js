@@ -61,8 +61,7 @@ function mainCtrl($scope, NgMap, $http, $uibModal) {
         position: loc,
         icon: icon,
         map: $scope.map,
-        title: restInfo.name,
-        snippet: restInfo.cuisines
+        title: restInfo.name +" (click me for details)"
       });
       setupListener(restInfo);
       restMarkers.push(marker);
