@@ -15,23 +15,23 @@
                 <div class="text-center text-success" style="font-size:18px; font-weight:400">
                     Details
                 </div>
-                <div style="font-weight:600;padding:5px 0px;">
-                    {{info.user_rating.aggregate_rating}}/5<span style="font-size:10px;"> ({{info.user_rating.votes}} votes)</span>
+                <div style="font-weight:600;padding:5px 0px">
+                    {{info.user_rating.aggregate_rating}}/5<span style="font-size:10px"> ({{info.user_rating.votes}} votes)</span>
                 </div>
-                <div style="padding:5px 0px;">
+                <div style="padding:5px 0px">
                     {{info.cuisines}}
                 </div>
-                <div style="padding:5px 0px;">
+                <div style="padding:5px 0px">
                     {{info.average_cost_for_two}}rs. for two
                 </div>
-                <div class="z-address" style="padding:5px 0px;">
+                <div class="z-address" style="padding:5px 0px">
                     {{info.location.address}}
                 </div>
-                <div ng-if="info.has_online_delivery == 0 && info.is_delivering_now==0 " style="padding:5px 0px;">
+                <div ng-if="info.has_online_delivery == 0 && info.is_delivering_now==0 " style="padding:5px 0px">
                     <div class="btn btn-primary btn-block" ng-click="orderNow(info.book_url)">Order Now
                     </div>
                 </div>
-                <div ng-if="info.has_online_delivery == 1 || info.is_delivering_now==1" style="padding:5px 0px;">
+                <div ng-if="info.has_online_delivery == 1 || info.is_delivering_now==1" style="padding:5px 0px">
                     <div class="btn btn-primary btn-block disabled">No Online Order
                     </div>
                 </div>
