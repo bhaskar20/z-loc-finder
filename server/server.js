@@ -5,13 +5,13 @@ var express = require('express')
 
 var app = express();
 
-app.set('port', process.env.PORT || 9000);
+app.set('port', process.env.PORT || 3000);
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(express.static(path.join(__dirname, '..', 'app')));
+app.use(express.static(path.join(__dirname, '..', 'dist')));
 
 // development only
 if ('development' == app.get('env')) {
